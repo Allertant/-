@@ -21,7 +21,7 @@ function getData(){
             resolve(data)
         })
     }).then(value=>{
-        manufactureData(value.toString().replaceAll('\r\n',' ').replaceAll('\n',' ').replaceAll(' ',''))
+        manufactureData(value.toString().replaceAll('\r\n',' '))
     },reason=>{
         console.log('文件有问题')
     }).then(value=>{
@@ -31,7 +31,7 @@ function getData(){
 
 // 对字符串类型的数据进行分割处理
 function manufactureData(value){
-    const dataArr = value.split('')
+    const dataArr = value.split(' ')
     m = dataArr[0]
     n = dataArr[1]
     // 资源分配情况输入
